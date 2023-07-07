@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fps.ua/static/css/main.7acaea2f.css",
+    "main.js": "/fps.ua/static/js/main.3cb9a2b1.js",
+    "index.html": "/fps.ua/index.html",
+    "main.7acaea2f.css.map": "/fps.ua/static/css/main.7acaea2f.css.map",
+    "main.3cb9a2b1.js.map": "/fps.ua/static/js/main.3cb9a2b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.3cb9a2b1.js"
+  ]
+}
