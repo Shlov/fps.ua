@@ -1,0 +1,180 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.container {
+  margin: 10vw 6vw 14vw 6vw;
+}
+
+.card {
+  padding: 4vw;
+  border: rgba(0, 0, 0, 0.05) solid 1px;
+}
+
+
+
+.list {
+  display: flex;
+  gap: 32px;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+}
+
+.link {
+  background-color: var(--cl-orange);
+  color: var(--cl-white);
+  padding: 2vw 4vw;
+}
+
+.header {
+  display: flex;
+  gap: 4vw;
+  margin-bottom: 2vw;
+}
+
+.description {
+  margin-bottom: 4vw;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  fill: #E67136;
+}
+
+.quote {
+  width: 6vw;
+  height: 6vw;
+}
+
+// 
+// 
+
+.dots {
+  position: absolute;
+  bottom: -8vw;
+  left: 50%;
+  transform: translate(-50%, -50%);;
+  color: #E67136;
+  fill: #E67136;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.dots > li {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: var(--cl-gray-100);
+  position: relative;
+}
+
+.dots > li:global(.slick-active) > div {
+  background-color: var(--cl-light-gray);
+}
+
+.dots button {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background-color: var(--cl-gray-100);
+  cursor: pointer;
+}
+
+.dots > li:global(.slick-active) button {
+  background-color: var(--cl-primary-500);
+}
+
+.paging {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  color: var(--cl-light-gray);
+  border: 1px var(--cl-light-gray) solid
+}
+
+
+
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: repeat(3, 1fr);
+//   grid-column-gap: 0px;
+//   grid-row-gap: 24px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     height: 798px;
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-template-rows: repeat(2, 1fr);
+//     grid-column-gap: 24px;
+//     grid-row-gap: 24px;
+//   }
+// }
+
+// .card {
+//   position: relative;
+//   border-radius: 20px;
+// }
+
+// .candle {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 1 / 1 / 3 / 2;
+//     background-color: aquamarine;
+//     height: 798px;
+//   }
+// }
+
+// .box {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 1 / 2 / 2 / 3;
+//     background-color: blue;
+//     height: 387px;
+//   }
+// }
+
+// .create {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 2 / 2 / 3 / 3;
+//     background-color: blueviolet;
+//     height: 387px;
+//   }
+// }
+
+// .image {
+//   border-radius: 20px;
+//   height: 100%;
+// }
+
+// .gradient {
+//   position: absolute;
+//   bottom: 0;
+//   border-radius: 0px 0px 20px 20px;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(180deg, rgba(6, 6, 6, 0.00) 0%, rgba(6, 6, 6, 0.87) 86.09%, #060606 100%);
+// }
+
+// .text {
+//   position: absolute;
+//   bottom: 0;
+//   padding: 40px 0px;
+//   width: 100%;
+//   text-align: center;
+// }

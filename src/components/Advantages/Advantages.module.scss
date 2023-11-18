@@ -1,0 +1,181 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.wrapper {
+  // display: flex;
+  position: relative;
+}
+
+.wrapperArrows {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 72vw;
+}
+
+.list {
+  display: block;
+  padding: 12vw 8vw;
+}
+
+.item {
+  // display: flex;
+  // gap: 8vw;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
+  padding: 4vw 8vw;
+  // width: 70vw;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: inherit;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--cl-black);
+}
+
+.num {
+  color: #000;
+  // font-family: Pridi;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  margin-bottom: 2vw;
+  & span {
+    font-size: 24px;
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: -8vw;
+  left: 50%;
+  transform: translate(-50%, -50%);;
+  color: #E67136;
+  fill: #E67136;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.dots > li {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: var(--cl-gray-100);
+  position: relative;
+}
+
+.dots > li:global(.slick-active) > div {
+  background-color: var(--cl-light-gray);
+}
+
+.dots button {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background-color: var(--cl-gray-100);
+  cursor: pointer;
+}
+
+.dots > li:global(.slick-active) button {
+  background-color: var(--cl-primary-500);
+}
+
+.paging {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  color: var(--cl-light-gray);
+  border: 1px var(--cl-light-gray) solid
+}
+
+
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: repeat(3, 1fr);
+//   grid-column-gap: 0px;
+//   grid-row-gap: 24px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     height: 798px;
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-template-rows: repeat(2, 1fr);
+//     grid-column-gap: 24px;
+//     grid-row-gap: 24px;
+//   }
+// }
+
+// .card {
+//   position: relative;
+//   border-radius: 20px;
+// }
+
+// .candle {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 1 / 1 / 3 / 2;
+//     background-color: aquamarine;
+//     height: 798px;
+//   }
+// }
+
+// .box {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 1 / 2 / 2 / 3;
+//     background-color: blue;
+//     height: 387px;
+//   }
+// }
+
+// .create {
+//   height: 360px;
+
+//   @include breakpoint('tablet-small-and-up') {
+//     grid-area: 2 / 2 / 3 / 3;
+//     background-color: blueviolet;
+//     height: 387px;
+//   }
+// }
+
+// .image {
+//   border-radius: 20px;
+//   height: 100%;
+// }
+
+// .gradient {
+//   position: absolute;
+//   bottom: 0;
+//   border-radius: 0px 0px 20px 20px;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(180deg, rgba(6, 6, 6, 0.00) 0%, rgba(6, 6, 6, 0.87) 86.09%, #060606 100%);
+// }
+
+// .text {
+//   position: absolute;
+//   bottom: 0;
+//   padding: 40px 0px;
+//   width: 100%;
+//   text-align: center;
+// }

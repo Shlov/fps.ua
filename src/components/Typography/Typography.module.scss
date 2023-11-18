@@ -1,0 +1,155 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+/*font-family: ;*/
+.typography--variant-heading1 {
+  
+  font-size: calc(1em + 4vw);
+  font-weight: 800;
+  line-height: 1.4;
+  text-shadow: 3px 4px 10px rgba(0,0,0,0.88);
+  // @include breakpoint('mobile-large-and-up') {
+  //   font-size: 64px;
+  // }
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 80px;
+  }
+}
+
+.typography--variant-heading2 {
+  
+  font-size: calc(0.5em + 2.2vw);
+  font-weight: 800;
+  line-height: 1.4;
+  // @include breakpoint('mobile-large-and-up') {
+  //   font-size: 64px;
+  // }
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 64px;
+  }
+}
+
+.typography--variant-subheading1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  
+  @include breakpoint('mobile-large-and-up') {
+    font-size: 40px;
+  }
+
+}
+
+.typography--variant-subheading2 {
+
+  font-size: calc(0.5em + 3vw);
+  font-weight: 700;
+  line-height: 1.0;
+  @include breakpoint('tablet-large-and-up') {
+  font-size: 48px;
+  }
+}
+
+.typography--variant-subheadingT {
+
+  font-size: calc(1em + 4vw);
+  font-weight: 700;
+  line-height: 1.0;
+}
+
+.typography--variant-subheading3 {
+  font-size: calc(0.5em + 2vw);
+  font-weight: 400;
+  line-height: normal;
+  // @include breakpoint('mobile-large-and-up') {
+  //   font-size: 64px;
+  // }
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 64px;
+  }
+}
+
+.typography--variant-subheadingN {
+  font-size: calc(0.5em + 4vw);
+  font-weight: 400;
+  line-height: normal;
+  // @include breakpoint('mobile-large-and-up') {
+  //   font-size: 64px;
+  // }
+
+  // @include breakpoint('tablet-large-and-up') {
+  //   font-size: 64px;
+  // }
+}
+
+
+.typography--variant-button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.typography--variant-body1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.58;
+}
+
+.typography--variant-bodyXL {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.58;
+}
+
+.typography--variant-bodyA {
+  font-size: calc(0.5em + 2vw);
+  font-weight: 700;
+  line-height: 1.58;
+}
+
+.typography--variant-bodyB {
+  font-size: calc(0.5em + 2vw);
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.typography--variant-bodyC {
+  font-size: calc(0.5em + 2vw);
+  font-weight: 400;
+  line-height: normal;
+  // @include breakpoint('mobile-large-and-up') {
+  //   font-size: 64px;
+  // }
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 64px;
+  }
+}
+
+.typography--variant-bodyD {
+  font-size: calc(0.5em + 3vw);
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+
+.typography--variant-bodyL {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.typography--variant-bodyM {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.typography--variant-bodyS {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+}

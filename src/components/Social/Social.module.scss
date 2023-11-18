@@ -1,0 +1,34 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.list {
+  display: flex;
+  // gap: 60px;
+  width: 72vw;
+  justify-content: space-between;
+
+}
+
+.item {
+  background-color: var(--cl-white);
+  // color: inherit;
+  // width: 60px;
+  // height: 60px;
+  border-radius: 60px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 100%;
+  // background-color: var(--cl-orange);
+  width: 12vw;
+  height: 12vw;
+  // border-radius: 60px;
+}
+
+.link svg {
+  fill: inherit;
+  width: 8vw;
+  height: 8vw;
+}

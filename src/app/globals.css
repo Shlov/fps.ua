@@ -1,0 +1,79 @@
+:root {
+  /* colors */
+
+  --cl-white: #ffffff;
+  --cl-white-06: rgba(255, 255, 255, 0.60);
+
+  --cl-black: #000;
+  --cl-black-085: rgba(0, 0, 0, 0.85);
+  --cl-orange: #EF3C23;
+  
+  
+  --cl-light-gray: #D9D9D9;
+  --cl-gray: #2d2d2d;
+
+
+
+  /* size */
+
+  /* animat */
+  --animat: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button {
+  font-family: inherit;
+}
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--cl-white-06);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--cl-orange);
+}

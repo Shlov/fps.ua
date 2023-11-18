@@ -1,0 +1,70 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.footer {
+  // padding-top: 24px;
+  // padding-bottom: 24px;
+  text-align: center;
+  background-color: var(--cl-orange);
+  
+  @include breakpoint('desktop-large') {
+    border-top: 34px solid var(--cl-orange);
+    background-color: var(--cl-black);
+    // padding-top: 40px;
+  }
+}
+
+.wrapperFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include breakpoint('desktop-large') {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.wrapperContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vw 0;
+}
+
+.map {
+  width: 100vw;
+  height: 60vw;
+
+  @include breakpoint('desktop-large') {
+    width: 737px;
+    height: 375px;
+  }
+}
+
+.number {
+
+  @include breakpoint('all-devices-without-desktop') {
+    display: none;
+  }
+}
+
+.logo {
+  @include breakpoint('all-devices-without-desktop') {
+    display: none;
+  }
+}
+
+.rights {
+  padding: 4vw 0;
+}
+
+
+.social {
+  fill: var(--cl-orange);
+  margin-top: 6vw;
+}

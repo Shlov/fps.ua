@@ -1,0 +1,55 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.wrapperTitle {
+  background-color: var(--cl-white);
+}
+
+.list {
+  // display: flex;
+  // gap: 24px;
+  // padding: 45px 0;
+  padding-bottom: 12vw;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  color: var(--cl-orange);
+  text-transform: uppercase;
+}
+
+.name {
+  margin-bottom: 4vw;
+  background-color: var(--cl-black);
+  padding: 4vw 14vw;
+}
+
+.wrapperIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 2vw;
+  height: 2.5vw;
+  fill: var(--cl-black);
+  padding-bottom: .5vw;
+
+}
+
+.wrapperText {
+  display: flex;
+  align-items: baseline;
+  gap: 2vw;
+  padding: 0 8vw;
+}
+
+// .text{
+
+// }
+

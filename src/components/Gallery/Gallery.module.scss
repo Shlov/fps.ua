@@ -1,0 +1,10 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.list {
+  display: flex;
+  gap: 32px;
+}
+
+.title {
+  text-transform: uppercase;
+}
