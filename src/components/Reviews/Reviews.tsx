@@ -15,7 +15,16 @@ import Typography from '../Typography/Typography';
 import styles from './Reviews.module.scss';
 // import Paging from '../Paging/Paging';
 
-type dataI = Record<string, string>[];
+// type dataI = Record<string, string>[];
+
+type dataI = {
+  name: string,
+  image: any,
+  time: string,
+  stars: string,
+  description: string,
+  link: string,
+}[];
 
 const data: dataI = [
   {
