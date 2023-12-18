@@ -14,6 +14,7 @@ import Social from '../Social/Social';
 import Typography from '../Typography/Typography';
 
 import styles from './Header.module.scss';
+import Number from '../Number/Number';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,15 +67,7 @@ const Header = () => {
             <Typography color="var(--cl-white-06)">
               Приєднуйся до нашої команди!
             </Typography>
-            <div className={styles.phone}>
-              <LiaPhoneSolid
-                className={styles.icon}
-                style={{ width: 24, height: 24 }}
-              />
-              <Typography color="var(--cl-orange)">
-                +380 50 351 12 14
-              </Typography>
-            </div>
+            <Number/>
           </div>
         )}
         <div

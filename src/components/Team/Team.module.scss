@@ -1,7 +1,69 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
+.section {
+  @include breakpoint('tablet-large-and-up'){
+    padding-top: 110px;
+  }
+}
+
+.container { 
+  @include breakpoint('tablet-large-and-up') {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .wrapperTitle {
   background-color: var(--cl-white);
+
+  @include breakpoint('tablet-large-and-up') {
+    display: none;
+  }
+}
+
+.wrapperList {
+  @include breakpoint('tablet-large-and-up') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // border-left: 2px var(--cl-black) solid;
+  }
+}
+
+.arrow {
+  position: absolute;
+  left: -100px;
+  top: 72px;
+  width: 100px;
+  height: 100px;
+
+}
+
+.subheading {
+  display: none;
+  @include breakpoint('tablet-large-and-up') {
+    display: block;
+  }
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.image {
+  @include breakpoint('tablet-large-and-up') {
+    // width: 856px;
+    width: 720px;
+    // height: 640px;
+    height: 538px;
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .list {
@@ -9,6 +71,21 @@
   // gap: 24px;
   // padding: 45px 0;
   padding-bottom: 12vw;
+
+  @include breakpoint('tablet-large-and-up') {
+    border-left: 2px var(--cl-black) solid;
+  }
+
+  @include breakpoint('desktop') {
+    width: 400px;
+    padding: 0;
+  }
+  
+  @include breakpoint('desktop-large') {
+    width: 360px;
+    padding: 0;
+    
+  }
 }
 
 .item {
@@ -20,12 +97,43 @@
 .title {
   color: var(--cl-orange);
   text-transform: uppercase;
+
+
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .name {
   margin-bottom: 4vw;
   background-color: var(--cl-black);
   padding: 4vw 14vw;
+  color: var(--cl-white);
+
+  @include breakpoint('tablet-large-and-up') {
+    background-color: var(--cl-white);
+    color: var(--cl-black);
+    text-transform: uppercase;
+    border-left: 4px var(--cl-black) solid;
+
+  }
+  
+  @include breakpoint('desktop') {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 0 0 24px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 0 0 24px;
+  }
 }
 
 .wrapperIcon {
@@ -40,6 +148,11 @@
   fill: var(--cl-black);
   padding-bottom: .5vw;
 
+  @include breakpoint('tablet-large-and-up') {
+    display: none;
+  }
+
+
 }
 
 .wrapperText {
@@ -47,6 +160,14 @@
   align-items: baseline;
   gap: 2vw;
   padding: 0 8vw;
+
+  @include breakpoint('desktop') {
+    padding: 0;
+  }
+  
+  @include breakpoint('desktop-large') {
+    padding: 0;
+  }
 }
 
 // .text{

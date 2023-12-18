@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .icon {
@@ -83,44 +84,6 @@
 
 }
 
-// /*
-//   |==============================
-//   | Icons 
-//   |==============================
-// */
-// .icons {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 40px;
-//   margin-left: auto;
-// }
-
-// .iconsList {
-//   display: flex;
-//   align-items: center;
-//   gap: 16px;
-// }
-
-// .iconsItem {
-//   cursor: pointer;
-//   width: 44px;
-//   height: 44px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .iconsItem svg {
-//   width: 18px;
-//   height: 18px;
-// }
-
-// /*
-//   |==============================
-//   | Burger menu 
-//   |==============================
-// */
 
 .burgerMenu {
   position: absolute;

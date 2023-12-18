@@ -7,4 +7,8 @@
   align-items: center;
   justify-content: center;
   background-color: var(--cl-orange);
+  
+  @include breakpoint('tablet-large-and-up') {
+    height: 80px;
+  }
 }

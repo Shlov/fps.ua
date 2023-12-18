@@ -12,7 +12,16 @@
   // }
 
   @include breakpoint('tablet-large-and-up') {
-    font-size: 80px;
+  }
+  
+  @include breakpoint('desktop') {
+    font-size: 52px;
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+    
+    font-size: 64px;  
   }
 }
 
@@ -26,7 +35,17 @@
   // }
 
   @include breakpoint('tablet-large-and-up') {
-    font-size: 64px;
+    // font-size: 64px;
+  }
+
+  @include breakpoint('desktop') {
+    font-size: 36px;
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+    
+    font-size: 46px;  
   }
 }
 
@@ -35,9 +54,7 @@
   font-weight: 700;
   line-height: 1.25;
   
-  @include breakpoint('mobile-large-and-up') {
-    font-size: 40px;
-  }
+
 
 }
 
@@ -56,6 +73,19 @@
   font-size: calc(1em + 4vw);
   font-weight: 700;
   line-height: 1.0;
+
+  @include breakpoint('mobile-large-and-up') {
+    font-size: 40px;
+  }
+
+  @include breakpoint('desktop') {
+    font-size: 34px;
+
+  }
+  
+  @include breakpoint('desktop-large') {
+    font-size: 36px;
+  }
 }
 
 .typography--variant-subheading3 {
@@ -67,7 +97,7 @@
   // }
 
   @include breakpoint('tablet-large-and-up') {
-    font-size: 64px;
+    font-size: 24px;
   }
 }
 
@@ -75,13 +105,13 @@
   font-size: calc(0.5em + 4vw);
   font-weight: 400;
   line-height: normal;
-  // @include breakpoint('mobile-large-and-up') {
-  //   font-size: 64px;
-  // }
+  @include breakpoint('desktop') {
+    font-size: 28px;
+  }
 
-  // @include breakpoint('tablet-large-and-up') {
-  //   font-size: 64px;
-  // }
+  @include breakpoint('desktop-large') {
+    font-size: 28px;
+  }
 }
 
 
@@ -107,12 +137,29 @@
   font-size: calc(0.5em + 2vw);
   font-weight: 700;
   line-height: 1.58;
+  
+  @include breakpoint('desktop') {
+    font-size: 20px;
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+    font-size: 24px;
+  }
 }
 
 .typography--variant-bodyB {
   font-size: calc(0.5em + 2vw);
   font-weight: 400;
   line-height: 1.58;
+
+  @include breakpoint('desktop') {
+    font-size: 18px;
+  }
+
+  @include breakpoint('desktop-large') {
+    font-size: 18px;
+  }
 }
 
 .typography--variant-bodyC {
@@ -124,7 +171,7 @@
   // }
 
   @include breakpoint('tablet-large-and-up') {
-    font-size: 64px;
+    font-size: 24px;
   }
 }
 
@@ -132,6 +179,14 @@
   font-size: calc(0.5em + 3vw);
   font-weight: 400;
   line-height: 1.58;
+
+  @include breakpoint('desktop') {
+    font-size: 20px;
+  }
+
+  @include breakpoint('desktop-large') {
+    font-size: 20px;
+  }
 }
 
 

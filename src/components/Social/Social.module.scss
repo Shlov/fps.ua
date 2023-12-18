@@ -6,6 +6,19 @@
   width: 72vw;
   justify-content: space-between;
 
+  @include breakpoint('tablet-large-and-up') {
+    width: auto;
+    gap: 24px;
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
+
 }
 
 .item {
@@ -14,6 +27,18 @@
   // width: 60px;
   // height: 60px;
   border-radius: 60px;
+
+  @include breakpoint('tablet-large-and-up') {
+
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .link {
@@ -25,10 +50,27 @@
   width: 12vw;
   height: 12vw;
   // border-radius: 60px;
+  @include breakpoint('tablet-large-and-up') {
+    width: 48px;
+    height: 48px;
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .link svg {
   fill: inherit;
   width: 8vw;
   height: 8vw;
+  @include breakpoint('tablet-large-and-up') {
+    fill: var(--cl-black);
+    width: 40px;
+    height: 40px;
+  }
 }

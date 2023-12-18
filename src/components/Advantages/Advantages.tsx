@@ -1,9 +1,11 @@
 'use client';
+import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import Slider, { Settings } from 'react-slick';
 
-// import Container from '../Container/Container';
+import advantagesImg from '../../../public/images/advantages/advantages.gif';
+import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import Typography from '../Typography/Typography';
@@ -34,13 +36,13 @@ const advantages = [
 ];
 
 const sliderSettings: Settings = {
-  autoplay : true,
-  autoplaySpeed : 8000,
+  autoplay: true,
+  autoplaySpeed: 8000,
   appendDots: (dots: React.ReactNode) => <ul>{dots}</ul>,
   // dotsClass: `${styles.dots} ${dotsStyles}`,
   dotsClass: styles.dots,
   // customPaging: () => <Paging />
-  customPaging: () => (<div className={styles.paging}></div>)
+  customPaging: () => <div className={styles.paging}></div>,
 };
 
 const Advantages = () => {
@@ -73,57 +75,64 @@ const Advantages = () => {
 
   return (
     <Section>
-      <Title>
-        <Typography
-          variant="subheading1"
-          className={styles.title}
-          color="var(--cl-white)"
-        >
-          Ключеві переваги
-        </Typography>
-      </Title>
-      {/* <Container> */}
-      <div className={styles.wrapper}>
-        <ul className={styles.list}>
-          <Slider
-            {...sliderSettings}
-            ref={sliderRef}
-            infinite={true}
-            slidesToShow={1}
-            slidesToScroll={1}
-            dots
-            afterChange={(index: number) => handleSmallImageClick(index)}
+      <Container>
+        <Title>
+          <Typography
+            variant="subheading1"
+            className={styles.title}
+            color="var(--cl-white)"
           >
-            {advantages.map(advantage => (
-              <li key={advantage.number} className={styles.item}>
-                <Typography className={styles.num}>
-                  {/* {`# ${advantage.number}`} */}
-                  <span>#</span>
-                  {advantage.number}
-                </Typography>
-                <Typography variant="bodyA">{advantage.text}</Typography>
-              </li>
-            ))}
-          </Slider>
-        </ul>
-        <div className={styles.wrapperArrows}>
-          <button
-            onClick={handlePrevClick}
-            aria-label="prev"
-            className={styles.btn}
-          >
-            <SlArrowLeft className={styles.icon} />
-          </button>
-          <button
-            onClick={handleNextClick}
-            aria-label="next"
-            className={styles.btn}
-          >
-            <SlArrowRight className={styles.icon} />
-          </button>
+            Ключеві переваги
+          </Typography>
+        </Title>
+        {/* <Container> */}
+        <div className={styles.wrapper}>
+          <div className={styles.wrapperList}>
+            <ul className={styles.list}>
+              <Slider
+                {...sliderSettings}
+                ref={sliderRef}
+                infinite={true}
+                slidesToShow={1}
+                slidesToScroll={1}
+                dots
+                afterChange={(index: number) => handleSmallImageClick(index)}
+              >
+                {advantages.map(advantage => (
+                  <li key={advantage.number} className={styles.item}>
+                    <Typography className={styles.num}>
+                      {/* {`# ${advantage.number}`} */}
+                      <span>#</span>
+                      {advantage.number}
+                    </Typography>
+                    <Typography variant="bodyA" className={styles.text}>
+                      {advantage.text}
+                    </Typography>
+                  </li>
+                ))}
+              </Slider>
+            </ul>
+
+            <div className={styles.wrapperArrows}>
+              <button
+                onClick={handlePrevClick}
+                aria-label="prev"
+                className={styles.btn}
+              >
+                <SlArrowLeft className={styles.icon} />
+              </button>
+              <button
+                onClick={handleNextClick}
+                aria-label="next"
+                className={styles.btn}
+              >
+                <SlArrowRight className={styles.icon} />
+              </button>
+            </div>
+          </div>
+          <Image src={advantagesImg} alt='Відео наших занять'  className={styles.gif}/>
         </div>
-      </div>
-      {/* </Container> */}
+      </Container>
     </Section>
   );
 };

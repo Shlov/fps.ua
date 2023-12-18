@@ -17,15 +17,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include breakpoint('desktop-large') {
+
+  
+  @include breakpoint('tablet-large-and-up') {
+    width: 100%;
+    justify-content: space-between;
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+  
+  @include breakpoint('desktop') {
+    margin: 60px 0;
+  }
+  
+  @include breakpoint('desktop-large') {
+    margin: 80px 0;
+
   }
 }
 
@@ -33,7 +48,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4vw 0;
+  // padding: 4vw 0;
+  margin: 4vw 0;
+  @include breakpoint('desktop') {
+    // margin: 36px 0;
+    margin: 0;
+    gap: 24px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    // margin: 46px 0;
+    margin: 0;
+    gap: 32px;
+  }
+
 }
 
 .map {
@@ -47,6 +75,12 @@
 }
 
 .number {
+  font-size: 24px;
+
+  & > svg {
+    width: 30px;
+    height: 30px;
+  }
 
   @include breakpoint('all-devices-without-desktop') {
     display: none;
@@ -57,14 +91,40 @@
   @include breakpoint('all-devices-without-desktop') {
     display: none;
   }
+
+  @include breakpoint('desktop') {
+    // margin-bottom: 46px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    // margin-bottom: 52px;
+  }
 }
 
 .rights {
   padding: 4vw 0;
+
+  @include breakpoint('tablet-large-and-up') {
+    padding: 24px 0;
+  }
 }
 
 
 .social {
   fill: var(--cl-orange);
   margin-top: 6vw;
+
+  @include breakpoint('tablet-large-and-up') {
+    margin: 0;
+  }
+  &> li:hover {
+    background-color: var(--cl-orange);
+  }
+}
+
+.address {
+  color: var(--cl-white);
+  &:hover {
+    color: var(--cl-orange);
+  }
 }

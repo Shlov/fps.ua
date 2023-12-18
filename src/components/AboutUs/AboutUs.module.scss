@@ -1,5 +1,54 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
+.section {
+  @include breakpoint('tablet-large-and-up') {
+    padding: 110px 0 110px 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  background-color: var(--cl-black);
+  // height: calc(100vh - 100px);
+  
+  @include breakpoint('tablet-large-and-up') {
+    background-color: var(--cl-white);
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: flex-start; 
+    gap: 20px;
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
+
+
+
+}
+
+.wrapperImage {
+  position: relative;
+  // padding-bottom: 470px;
+  // background-color: var(--cl-black);
+}
+
+.image {
+  @include breakpoint('tablet-large-and-up') {
+    width: 720px;
+    height: 538px;
+  }
+}
+
+.list {
+  list-style: initial;
+}
+
+
 .item {
   display: flex;
   flex-direction: column;
@@ -14,6 +63,10 @@
   padding: 1vw 4vw;
 
   position: relative;
+
+  @include breakpoint('tablet-large-and-up')  {
+    padding: 0;
+  }
 }
 
 .arrow {
@@ -31,7 +84,7 @@
 }
 
 .wrapperText {
-  padding: 2vw 6vw;
+  // padding: 2vw 6vw;
 }
 
 .input:checked ~ .description { 
@@ -58,24 +111,6 @@
 
 
 
-.wrapper {
-  position: relative;
-  background-color: var(--cl-black);
-  // height: calc(100vh - 100px);
-}
-
-.wrapperImage {
-  position: relative;
-  // padding-bottom: 470px;
-  // background-color: var(--cl-black);
-}
-
-.image {
-}
-
-.list {
-  list-style: initial;
-}
 
 
 
@@ -87,11 +122,19 @@
 
 .hading {
   text-align: center;
+  color: var(--cl-white);
+  @include breakpoint('tablet-large-and-up') {
+    color: var(--cl-black);
+  }
 }
 
 .tag {
   text-transform: uppercase;
   line-height: 2.4;
+  color: var(--cl-white);
+  @include breakpoint('tablet-large-and-up') {
+    color: var(--cl-black);
+  }
 }
 
 

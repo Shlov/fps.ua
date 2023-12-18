@@ -1,16 +1,17 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 // import Link from 'next/link';
 import { FaCircle } from 'react-icons/fa';
 
 import aboutUs from '../../../public/images/aboutUs/AboutUs.jpg';
+import Container from '../Container/Container';
 // import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Typography from '../Typography/Typography';
 
 import styles from './AboutUs.module.scss';
-import { useState } from 'react';
 
 const data = [
   {
@@ -70,91 +71,94 @@ const data = [
   },
 ];
 
-
-
 const AboutUs = () => {
-
-  const [checkboxChecked, setCheckboxChecked] = useState<string | null>(null)
+  const [checkboxChecked, setCheckboxChecked] = useState<string | null>(null);
 
   const handleChangeCheckbox = (v: string) => {
     if (v === checkboxChecked) {
-      setCheckboxChecked(null)
-      return
+      setCheckboxChecked(null);
+      return;
     }
-    setCheckboxChecked(v)
-  }
+    setCheckboxChecked(v);
+  };
 
   return (
     <div id="AboutUs">
-      <Section>
-        {/* <h2>AboutUs section</h2> */}
-        <div className={styles.wrapper}>
-          <div className={styles.wrapperImage}>
-            <Image
-              src={aboutUs}
-              alt="aboutUs"
-              className={styles.image}
-              // sizes="(min-width: 1230) 588px,
-              // (min-width: 1024) 480px,
-              // (min-width: 768px) 352px,
-              // (min-width: 667px) 619px,
-              // 327px"
-              // fill
-              priority
-            />
-            <div className={styles.gradient}></div>
-          </div>
-          {/* <Container className={styles.wrapperText}> */}
-          {/* <div className={styles.wrapperText}> */}
-          <Typography
-            variant="subheading1"
-            color="var(--cl-white)"
-            className={styles.hading}
-          >
-            Про школу:
-          </Typography>
-          <ul className={styles.list}>
-            {data.map(item => (
-              <li className={styles.item} key={item.title}>
-                <input
-                  id={item.title}
-                  type="checkbox"
-                  className={`${styles.visuallyHidden} ${styles.input}`}
-                  checked={item.title === checkboxChecked}
-                  onClick={() => handleChangeCheckbox(item.title)}
-                ></input>
-                <label htmlFor={item.title} className={styles.label}>
-                  <FaCircle className={styles.icon} />
-                  <Typography
-                    variant="subheading3"
-                    color="var(--cl-white)"
-                    className={styles.tag}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography variant="subheading3" color="var(--cl-orange)" className={styles.arrow}>
-                    &#62;
-                  </Typography>
-                </label>
-                <div className={styles.description}>
-                  <div className={styles.wrapperText}>
-                    {item.description.map((text, index) => (
-                      <Typography
-                        variant="bodyC"
-                        key={index}
-                        className={styles.text}
-                      >
-                        {text}
-                      </Typography>
-                    ))}
+      <Section className={styles.section}>
+        <Container>
+          {/* <h2>AboutUs section</h2> */}
+          <div className={styles.wrapper}>
+            <div className={styles.wrapperImage}>
+              <Image
+                src={aboutUs}
+                alt="aboutUs"
+                className={styles.image}
+                // sizes="(min-width: 1230) 588px,
+                // (min-width: 1024) 480px,
+                // (min-width: 768px) 352px,
+                // (min-width: 667px) 619px,
+                // 327px"
+                // fill
+                priority
+              />
+              <div className={styles.gradient}></div>
+            </div>
+            {/* <Container className={styles.wrapperText}> */}
+            <div className={styles.wrapperText}>
+            <Typography
+              variant="subheading1"
+              // color="var(--cl-white)"
+              className={styles.hading}
+            >
+              Про школу:
+            </Typography>
+            <ul className={styles.list}>
+              {data.map(item => (
+                <li className={styles.item} key={item.title}>
+                  <input
+                    id={item.title}
+                    type="checkbox"
+                    className={`${styles.visuallyHidden} ${styles.input}`}
+                    checked={item.title === checkboxChecked}
+                    onClick={() => handleChangeCheckbox(item.title)}
+                  ></input>
+                  <label htmlFor={item.title} className={styles.label}>
+                    <FaCircle className={styles.icon} />
+                    <Typography
+                      variant="subheading3"
+                      // color="var(--cl-white)"
+                      className={styles.tag}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="subheading3"
+                      color="var(--cl-orange)"
+                      className={styles.arrow}
+                    >
+                      &#62;
+                    </Typography>
+                  </label>
+                  <div className={styles.description}>
+                    <div className={styles.wrapperText}>
+                      {item.description.map((text, index) => (
+                        <Typography
+                          variant="bodyC"
+                          key={index}
+                          className={styles.text}
+                        >
+                          {text}
+                        </Typography>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-          {/* </div> */}
-          {/* </Container> */}
-        </div>
+                </li>
+              ))}
+            </ul>
+            </div>
+            {/* </Container> */}
+          </div>
+        </Container>
       </Section>
     </div>
   );

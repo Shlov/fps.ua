@@ -6,6 +6,7 @@ import { inter } from '@components/app/fonts';
 
 import heroBg from '../../../public/images/hero/hero.jpg';
 import Button from '../Button/Button';
+import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Typography from '../Typography/Typography';
 
@@ -52,91 +53,88 @@ const Hero = () => {
 
   const data = {
     heading: [
-      'Нові враження',
-      'Твій впевнений скіл',
-      'Нові задоволення',
-      'Знайди своє!',
+      // '*Навички *рух *контроль',
+      'Нові навички та рівень контролю із',
+      'першого заняття.',
+      // 'Нові задоволення',
+      // 'Знайди своє!',
     ],
-    subheading: [
-      'Авто та мото навчання без зайвого,',
-      'Від повного нуля до спорту “під ключ”.',
-    ],
+    subheading: ['Авто та мото тренінги.', 'Від нуля до досконалості.'],
   };
 
   return (
     <>
       <Section className={styles.sectionWrapper}>
-        {/* <Container> */}
-        <Image
-          src={heroBg}
-          alt="Background Image"
-          quality={100}
-          priority
-          fill
-          sizes="(min-width: 1230) 1200px,
-                    (min-width: 1024) 976px,
-                    (min-width: 768px) 720px,
-                    (min-width: 667px) 619px,
-                    327px"
-        />
-        <div className={styles.gradient}>
-          <div className={styles.wrapper}>
-            <div className={styles.heading}>
-              <div className={styles.wrapperHeading}>
-                <Typography
-                  variant="heading1"
-                  className={inter.className}
-                  color="var(--cl-white)"
-                >
-                  {data.heading[0]}
-                </Typography>
-                {/* <div className={styles.wrapperHeading}> */}
-                <Typography
-                  variant="heading1"
-                  className={inter.className}
-                  color="var(--cl-white)"
-                >
-                  {data.heading[1]}
-                </Typography>
-                <Typography
-                  variant="heading1"
-                  className={inter.className}
-                  color="var(--cl-white)"
-                >
-                  {data.heading[2]}
-                </Typography>
-                {/* </div> */}
-                <Typography
-                  variant="heading1"
-                  className={inter.className}
-                  color="var(--cl-orange)"
-                >
-                  {data.heading[3]}
-                </Typography>
+          <Image
+            src={heroBg}
+            className={styles.image}
+            alt="Background Image"
+            quality={100}
+            priority
+            // fill
+            sizes="(min-width: 1230) 1200px,
+            (min-width: 1024) 976px,
+            (min-width: 768px) 720px,
+            (min-width: 667px) 619px,
+            327px"
+          />
+          <div className={styles.gradient}>
+            <Container className={styles.container}>
+            <div className={styles.wrapper}>
+              <div className={styles.heading}>
+                <div className={styles.wrapperHeading}>
+                  <Typography
+                    variant="heading1"
+                    className={inter.className}
+                    color="var(--cl-white)"
+                  >
+                    {data.heading[0]}
+                  </Typography>
+                  {/* <div className={styles.wrapperHeading}> */}
+                  <Typography
+                    variant="heading1"
+                    className={inter.className}
+                    color="var(--cl-orange)"
+                  >
+                    {data.heading[1]}
+                  </Typography>
+                  <Typography
+                    variant="heading1"
+                    className={inter.className}
+                    color="var(--cl-white)"
+                  >
+                    {data.heading[2]}
+                  </Typography>
+                  {/* </div> */}
+                  <Typography
+                    variant="heading1"
+                    className={inter.className}
+                    color="var(--cl-orange)"
+                  >
+                    {data.heading[3]}
+                  </Typography>
+                </div>
+                <div className={styles.wrapperSubheading}>
+                  <Typography
+                    variant="heading2"
+                    className={inter.className}
+                    color="var(--cl-white)"
+                  >
+                    {data.subheading[0]}
+                  </Typography>{' '}
+                  <Typography
+                    variant="heading2"
+                    className={inter.className}
+                    color="var(--cl-white)"
+                  >
+                    {data.subheading[1]}
+                  </Typography>
+                </div>
               </div>
-              <div className={styles.wrapperSubheading}>
-                <Typography
-                  variant="heading2"
-                  className={inter.className}
-                  color="var(--cl-white)"
-                >
-                  {data.subheading[0]}
-                </Typography>{' '}
-                <Typography
-                  variant="heading2"
-                  className={inter.className}
-                  color="var(--cl-white)"
-                >
-                  {data.subheading[1]}
-                </Typography>
-              </div>
+              <Button variant="primary">Записатись на пробне зайняття</Button>
             </div>
-            <Button variant="primary">
-              Записатись на пробне зайняття
-              </Button>
+        </Container>
           </div>
-        </div>
-        {/* </Container> */}
       </Section>
     </>
   );

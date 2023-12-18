@@ -8,7 +8,8 @@ import styles from './Contacts.module.scss';
 const Contacts = () => {
   return (
     <div id="Contacts">
-      <Section>
+      <Section className={styles.section}>
+          <Container>
         <Title>
           <Typography
             variant="subheading1"
@@ -18,7 +19,6 @@ const Contacts = () => {
             Контакти
           </Typography>
         </Title>
-        <Container>
           
         </Container>
       </Section>

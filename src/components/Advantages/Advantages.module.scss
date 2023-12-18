@@ -1,8 +1,45 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
 .wrapper {
-  // display: flex;
+  @include breakpoint('tablet-large-and-up') {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 50px;
+    
+  }
+}
+
+.wrapperList {
   position: relative;
+  @include breakpoint('tablet-large-and-up') {
+    
+  }
+  @include breakpoint('desktop') {
+    width: 500px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    width: 520px;
+  }
+}
+
+.gif {
+  display: none;
+  @include breakpoint('tablet-large-and-up') {
+    display: block;
+  }
+  @include breakpoint('desktop') {
+    width: 640px;
+    height: 480px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    width: 640px;
+    height: 480px;
+  }
 }
 
 .wrapperArrows {
@@ -12,11 +49,38 @@
   transform: translate(-50%, -50%);
   display: flex;
   gap: 72vw;
+  
+  @include breakpoint('tablet-large-and-up') {
+    gap: 480px;
+    
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .list {
+  // position: relative;
   display: block;
   padding: 12vw 8vw;
+
+  @include breakpoint('tablet-large-and-up') {
+    padding: 10px;
+    
+  }
+  
+  @include breakpoint('desktop') {
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+    
+  }
 }
 
 .item {
@@ -28,6 +92,20 @@
   text-align: center;
   padding: 4vw 8vw;
   // width: 70vw;
+  
+  @include breakpoint('tablet-large-and-up') {
+    padding: 0;
+    
+    width: 386px;
+  }
+  
+  @include breakpoint('desktop') {
+
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .title {
@@ -55,8 +133,37 @@
   font-weight: 700;
   line-height: 38px;
   margin-bottom: 2vw;
+  
   & span {
     font-size: 24px;
+  }
+  
+  @include breakpoint('desktop') {
+    margin-top: 4px;
+    margin-bottom: 36px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    margin-top: 4px;
+    margin-bottom: 36px;
+
+  }
+}
+
+.text {
+  @include breakpoint('tablet-large-and-up') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include breakpoint('desktop') {
+    
+    width: 388px;
+  }
+  
+  @include breakpoint('desktop-large') {
+
+    width: 388px;
+
   }
 }
 
@@ -71,6 +178,10 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
+  
+  @include breakpoint('tablet-large-and-up') {
+    bottom: -30px;
+  }
 }
 
 .dots > li {
@@ -172,10 +283,3 @@
 //   background: linear-gradient(180deg, rgba(6, 6, 6, 0.00) 0%, rgba(6, 6, 6, 0.87) 86.09%, #060606 100%);
 // }
 
-// .text {
-//   position: absolute;
-//   bottom: 0;
-//   padding: 40px 0px;
-//   width: 100%;
-//   text-align: center;
-// }
