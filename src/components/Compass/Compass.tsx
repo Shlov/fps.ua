@@ -2,18 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
+import autoImg from '../../../public/images/compass/auto.jpg';
 import driftImg from '../../../public/images/compass/drift.jpg';
 import enduroImg from '../../../public/images/compass/enduro.jpg';
 import sportImg from '../../../public/images/compass/sport.jpg';
 import svg from '../../../public/images/compass/svg.svg';
-import autoImg from '../../../public/images/compass/auto.jpg';
-// import Container from '../Container/Container';
+import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import Typography from '../Typography/Typography';
 
 import styles from './Compass.module.scss';
-import Container from '../Container/Container';
 
 const data = [
   {
@@ -80,7 +79,6 @@ const Compass = () => {
           </Typography>
         </Title>
         <Container>
-          {/* <Container> */}
           {/* <h2>Navigation section</h2> */}
           <div className={styles.wrapper}>
             {data.map((direction: any) => (
@@ -91,12 +89,6 @@ const Compass = () => {
                       src={direction.image}
                       alt="candle"
                       className={styles.image}
-                      //   sizes="(min-width: 1230) 588px,
-                      // (min-width: 1024) 480px,
-                      // (min-width: 768px) 352px,
-                      // (min-width: 667px) 619px,
-                      // 327px"
-                      // fill
                       priority
                     />
                     <div className={styles.gradient}></div>
@@ -104,7 +96,6 @@ const Compass = () => {
                       <div className={styles.wrapperDirection}>
                         <Typography
                           variant="subheadingT"
-                          // color="var(--cl-orange)"
                           className={styles.direction}
                         >
                           {direction.title}

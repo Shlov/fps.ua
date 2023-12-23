@@ -9,7 +9,6 @@ import Slider from 'react-slick';
 
 import team from '../../../public/images/team/team.jpg';
 import Container from '../Container/Container';
-// import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import Typography from '../Typography/Typography';

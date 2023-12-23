@@ -4,11 +4,11 @@ import { LiaPhoneSolid } from 'react-icons/lia';
 
 import logo from '../../../public/images/icons/header-logo.svg';
 import Container from '../Container/Container';
+import Number from '../Number/Number';
 import Social from '../Social/Social';
 import Typography from '../Typography/Typography';
 
 import styles from './Footer.module.scss';
-import Number from '../Number/Number';
 
 const Footer = () => {
   return (

@@ -35,17 +35,36 @@
   position: relative;
   // padding-bottom: 470px;
   // background-color: var(--cl-black);
+
+  @include breakpoint('desktop') {
+    display: none;
+  }
 }
 
 .image {
   @include breakpoint('tablet-large-and-up') {
-    width: 720px;
-    height: 538px;
+    width: 360px;
+    // width: 720px;
+    // height: 538px;
+    height: 520px;
   }
 }
 
 .list {
   list-style: initial;
+  @include breakpoint('tablet-large-and-up') {
+    
+  }
+
+  position: relative;
+
+  @include breakpoint('desktop') {
+    width: 420px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    width: 400px;
+  }
 }
 
 
@@ -53,7 +72,7 @@
   display: flex;
   flex-direction: column;
   // gap: 12px;
-  position: relative;
+  // position: relative;
 }
 
 .label {
@@ -62,10 +81,14 @@
   gap: 12px;
   padding: 1vw 4vw;
 
-  position: relative;
+  // position: relative;
+
+  cursor: pointer;
 
   @include breakpoint('tablet-large-and-up')  {
     padding: 0;
+    z-index: 1;
+    background-color: var(--cl-white);
   }
 }
 
@@ -73,39 +96,72 @@
   transition: transform .5s ease-in-out;
 }
 
-.input:checked ~ .label > .arrow {
+// .input:checked ~ .label > .arrow {
+//   transform: rotate(270deg);
+// }
+
+.active {
   transform: rotate(270deg);
+  transition: transform .5s ease-in-out;
+
+  @include breakpoint('tablet-large-and-up') {
+
+    transform: rotate(180deg);
+  }
+  
+
 }
 
 .input {
 }
 
 .text {
+
 }
 
 .wrapperText {
-  // padding: 2vw 6vw;
+  padding: 2vw 6vw;
+  background-color: var(--cl-white);
+  @include breakpoint('tablet-large-and-up'){
+    padding: 0;
+  }
+
 }
 
-.input:checked ~ .description { 
-  transition: max-height .50s ease-in-out;
-  max-height: 100vh;
-}
 
 .description {
 
-  max-height: 0;
   overflow: hidden;
-  transition: max-height .50s ease-in-out;
-
+  transition: height .50s ease-in-out;
+  
   background-color: var(--cl-white);
   width: 100%;
+  pointer-events: none;
+  
+  
+  @include breakpoint('tablet-large-and-up'){
+    position: absolute;
+    top:10px;
+    left: 0;
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 500ms ease;
+    transform: translateX(0);
+    // height: auto;
+  }
 
-  /*Desktop styles (from 1230px and above)*/
-  @include breakpoint('desktop-large') {
-    max-width: 1230px;
-    padding-left: 15px;
-    padding-right: 15px;
+}
+
+
+.visible {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+
+  @include breakpoint('tablet-large-and-up') {
+    // left: 400px;
+    transition: transform 500ms ease-in-out, opacity 500ms ease;
+    transform: translateX(100%);
+    opacity: 1;
+
   }
 }
 
@@ -125,6 +181,8 @@
   color: var(--cl-white);
   @include breakpoint('tablet-large-and-up') {
     color: var(--cl-black);
+    text-align: left;
+    padding: 12px;
   }
 }
 
@@ -134,6 +192,7 @@
   color: var(--cl-white);
   @include breakpoint('tablet-large-and-up') {
     color: var(--cl-black);
+    line-height: 2.6;
   }
 }
 

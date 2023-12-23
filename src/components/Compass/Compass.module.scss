@@ -44,8 +44,8 @@
 
 .link {
   @include breakpoint('desktop') {
-    width: 580px;
-    height: 475px;
+    width: 460px;
+    height: 420px;
     
   }
   
@@ -112,7 +112,8 @@
   width: 100%;
 
   @include breakpoint('desktop') {
-    height: auto;
+    width: 460px;
+    height: 268px;
   }
   
   @include breakpoint('desktop-large') {
@@ -160,7 +161,7 @@
 
   @include breakpoint('desktop') {
     // height: auto;
-    bottom: 160px;
+    bottom: 120px;
   }
   
   @include breakpoint('desktop-large') {

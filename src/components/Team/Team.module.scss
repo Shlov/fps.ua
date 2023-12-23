@@ -10,6 +10,7 @@
   @include breakpoint('tablet-large-and-up') {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -33,10 +34,22 @@
 
 .arrow {
   position: absolute;
-  left: -100px;
-  top: 72px;
+  left: -92px;
+  top: 46px;
   width: 100px;
   height: 100px;
+
+  
+  @include breakpoint('desktop') {
+    left: -54px;
+    top: 38px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 
 }
 
@@ -47,6 +60,15 @@
   }
   font-size: 40px;
   text-transform: uppercase;
+
+  
+  @include breakpoint('desktop') {
+    font-size: 30px;
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
 }
 
 .image {
@@ -58,11 +80,13 @@
   }
   
   @include breakpoint('desktop') {
-
+    width: 460px;
+    height: 344px;
   }
   
   @include breakpoint('desktop-large') {
-
+    width: 720px;
+    height: 538px;
   }
 }
 
@@ -77,7 +101,7 @@
   }
 
   @include breakpoint('desktop') {
-    width: 400px;
+    width: 460px;
     padding: 0;
   }
   
@@ -95,18 +119,7 @@
 }
 
 .title {
-  color: var(--cl-orange);
-  text-transform: uppercase;
 
-
-  
-  @include breakpoint('desktop') {
-
-  }
-  
-  @include breakpoint('desktop-large') {
-
-  }
 }
 
 .name {
@@ -124,9 +137,9 @@
   }
   
   @include breakpoint('desktop') {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    padding: 0 0 0 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 0 0 0 20px;
   }
   
   @include breakpoint('desktop-large') {

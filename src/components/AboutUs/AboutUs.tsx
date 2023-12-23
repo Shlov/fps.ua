@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // import Link from 'next/link';
 import { FaCircle } from 'react-icons/fa';
 
@@ -12,6 +12,7 @@ import Section from '../Section/Section';
 import Typography from '../Typography/Typography';
 
 import styles from './AboutUs.module.scss';
+import { useWindowSize } from 'usehooks-ts';
 
 const data = [
   {
@@ -27,7 +28,8 @@ const data = [
     ],
   },
   {
-    title: 'Які продукти ми пропонуємо:',
+    // title: 'Які продукти ми пропонуємо:',
+    title: 'Наші продукти:',
     description: [
       '- Авто школа',
       '- Дрифт школа',
@@ -37,7 +39,8 @@ const data = [
     ],
   },
   {
-    title: 'Що входить в навчальний курс?',
+    // title: 'Що входить в навчальний курс?',
+    title: 'Наш навчальний курс?',
     description: [
       'Це система коротких лекцій, вводних і вправ на тренуваннях, що формують базові навички, надійну основу, і згодом необхідний арсенал скілів для кожної дисципліни. Більш детально читайте інфу по відповідному продукту.',
     ],
@@ -72,14 +75,30 @@ const data = [
 ];
 
 const AboutUs = () => {
-  const [checkboxChecked, setCheckboxChecked] = useState<string | null>(null);
+  // const [checkboxChecked, setCheckboxChecked] = useState<string | null>(null);
 
-  const handleChangeCheckbox = (v: string) => {
-    if (v === checkboxChecked) {
-      setCheckboxChecked(null);
-      return;
+  // const handleChangeCheckbox = (v: string) => {
+
+  //   setCheckboxChecked((prevCheckboxChecked) => (prevCheckboxChecked === v ? null : v));
+
+  // };
+
+  const { width } = useWindowSize();
+
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const contentRefs = useRef<Array<HTMLDivElement | null>>(
+    Array(data.length).fill(null)
+  );
+
+  const handleToggle = (index: number) => {
+    setOpenIdx(prev => (prev === index ? null : index));
+  };
+
+  const setHeight = (index: number) => {
+    if (contentRefs.current[index]) {
+      return contentRefs.current[index]?.scrollHeight;
     }
-    setCheckboxChecked(v);
+    return 0;
   };
 
   return (
@@ -93,68 +112,67 @@ const AboutUs = () => {
                 src={aboutUs}
                 alt="aboutUs"
                 className={styles.image}
-                // sizes="(min-width: 1230) 588px,
-                // (min-width: 1024) 480px,
-                // (min-width: 768px) 352px,
-                // (min-width: 667px) 619px,
-                // 327px"
-                // fill
                 priority
               />
               <div className={styles.gradient}></div>
             </div>
             {/* <Container className={styles.wrapperText}> */}
-            <div className={styles.wrapperText}>
-            <Typography
-              variant="subheading1"
-              // color="var(--cl-white)"
-              className={styles.hading}
-            >
-              Про школу:
-            </Typography>
-            <ul className={styles.list}>
-              {data.map(item => (
-                <li className={styles.item} key={item.title}>
-                  <input
-                    id={item.title}
-                    type="checkbox"
-                    className={`${styles.visuallyHidden} ${styles.input}`}
-                    checked={item.title === checkboxChecked}
-                    onClick={() => handleChangeCheckbox(item.title)}
-                  ></input>
-                  <label htmlFor={item.title} className={styles.label}>
-                    <FaCircle className={styles.icon} />
-                    <Typography
-                      variant="subheading3"
-                      // color="var(--cl-white)"
-                      className={styles.tag}
+            <div className={styles.wrapperHading}>
+              <Typography variant="subheading1" className={styles.hading}>
+                Про школу:
+              </Typography>
+              <ul className={styles.list}>
+                {data.map((item, index) => (
+                  <li className={styles.item} key={item.title}>
+                    <div
+                      className={styles.label}
+                      onClick={() => handleToggle(index)}
                     >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      variant="subheading3"
-                      color="var(--cl-orange)"
-                      className={styles.arrow}
-                    >
-                      &#62;
-                    </Typography>
-                  </label>
-                  <div className={styles.description}>
-                    <div className={styles.wrapperText}>
-                      {item.description.map((text, index) => (
-                        <Typography
-                          variant="bodyC"
-                          key={index}
-                          className={styles.text}
-                        >
-                          {text}
-                        </Typography>
-                      ))}
+                      <FaCircle className={styles.icon} />
+                      <Typography variant="subheading3" className={styles.tag}>
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="subheading3"
+                        color="var(--cl-orange)"
+                        className={`${styles.arrow} ${
+                          openIdx === index ? styles.active : ''
+                        }`}
+                      >
+                        &#62;
+                      </Typography>
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                    <div
+                      className={`${styles.description} ${
+                        index === openIdx ? styles.visible : ''
+                      }`}
+                      style={{
+                        height:
+                          width < 1024
+                            ? openIdx === index
+                              ? setHeight(index)
+                              : 0
+                            : 'auto',
+                      }}
+                    >
+                      <div
+                        className={styles.wrapperText}
+                        ref={el => (contentRefs.current[index] = el)}
+                      >
+                        {item.description.map((text, index) => (
+                          <Typography
+                            variant="bodyC"
+                            key={index}
+                            className={styles.text}
+                          >
+                            {text}
+                          </Typography>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
             {/* </Container> */}
           </div>

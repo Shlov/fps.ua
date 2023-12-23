@@ -17,12 +17,23 @@
   | Desktop styles (from 1230px and above)
   |==============================
 */
-@media (min-width: 1230px) {
-  .sectionContainer {
-    padding-bottom: 104px;
+// @media (min-width: 1230px) {
+//   .sectionContainer {
+//     padding-bottom: 104px;
+//   }
+
+// }
+
+.sectionContainer {
+
+  @include breakpoint('tablet-large-and-up') {
   }
-
-
-
+  
+  @include breakpoint('desktop') {
+    padding-bottom: 80px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    padding-bottom: 110px;
+  }
 }
-

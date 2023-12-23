@@ -38,6 +38,7 @@ const advantages = [
 const sliderSettings: Settings = {
   autoplay: true,
   autoplaySpeed: 8000,
+  arrows: false,
   appendDots: (dots: React.ReactNode) => <ul>{dots}</ul>,
   // dotsClass: `${styles.dots} ${dotsStyles}`,
   dotsClass: styles.dots,

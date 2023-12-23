@@ -6,7 +6,7 @@
   text-align: center;
   background-color: var(--cl-orange);
   
-  @include breakpoint('desktop-large') {
+  @include breakpoint('tablet-large-and-up') {
     border-top: 34px solid var(--cl-orange);
     background-color: var(--cl-black);
     // padding-top: 40px;
@@ -68,6 +68,11 @@
   width: 100vw;
   height: 60vw;
 
+  @include breakpoint('desktop') {
+    width: 660px;
+    height: 330px;
+  }
+
   @include breakpoint('desktop-large') {
     width: 737px;
     height: 375px;
@@ -76,6 +81,7 @@
 
 .number {
   font-size: 24px;
+  display: none;
 
   & > svg {
     width: 30px;
@@ -83,15 +89,21 @@
   }
 
   @include breakpoint('all-devices-without-desktop') {
-    display: none;
+  }
+
+  @include breakpoint('tablet-large-and-up') {
+    display: flex;
   }
 }
 
 .logo {
-  @include breakpoint('all-devices-without-desktop') {
+  // @include breakpoint('all-devices-without-desktop') {
     display: none;
+  // }
+  
+  @include breakpoint('tablet-large-and-up') {
+    display: block;
   }
-
   @include breakpoint('desktop') {
     // margin-bottom: 46px;
   }
