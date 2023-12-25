@@ -1,11 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-// import Link from 'next/link';
 import { useRef } from 'react';
 import { FaCircle } from 'react-icons/fa';
-import { HiArrowLongRight } from "react-icons/hi2";
 import Slider from 'react-slick';
+import Arrow from '@images/team/noun-right-928773.svg';
 
 import team from '../../../public/images/team/team.jpg';
 import Container from '../Container/Container';
@@ -83,14 +82,18 @@ const Team = () => {
             priority
           />
           <div className={styles.wrapperList}>
-          <Typography
+            <Typography
               variant="subheading1"
               className={styles.subheading}
               color="var(--cl-black)"
             >
               Наша команда
             </Typography>
-            <HiArrowLongRight  className={styles.arrow}/>
+            <Image
+              src={Arrow}
+              alt="Стрілка Вказує на імя стренера"
+              className={styles.arrow}
+            />
             <ul className={styles.list}>
               <Slider
                 // {...sliderSettings}

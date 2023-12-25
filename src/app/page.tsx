@@ -1,10 +1,10 @@
-import AboutUs from '@components/components/AboutUs/AboutUs';
-import Advantages from '@components/components/Advantages/Advantages';
-import Contacts from '@components/components/Contacts/Contacts';
-// import Gallery from '@components/components/Gallery/Gallery';
-import Hero from '@components/components/Hero/Hero';
-import Reviews from '@components/components/Reviews/Reviews';
-import Team from '@components/components/Team/Team';
+import AboutUs from '@components/AboutUs/AboutUs';
+import Advantages from '@components/Advantages/Advantages';
+import Contacts from '@components/Contacts/Contacts';
+// import Gallery from '@components/Gallery/Gallery';
+import Hero from '@components/Hero/Hero';
+import Reviews from '@components/Reviews/Reviews';
+import Team from '@components/Team/Team';
 
 import Compass from '../components/Compass/Compass';
 
