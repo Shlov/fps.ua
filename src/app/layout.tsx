@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Footer from '@components/components/Footer/Footer';
 import Header from '@components/components/Header/Header';
+import ScrollToUpButton from '@components/components/ScrollToUpButton/ScrollToUpButton';
 
 import { pridi } from './fonts';
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Header />
         <main className={styles.main}>{children}</main>
         <Footer />
+        <ScrollToUpButton />
       </body>
     </html>
   );
