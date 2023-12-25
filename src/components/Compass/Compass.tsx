@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import autoImg from '@images/compass/auto.jpg';
+import driftImg from '@images/compass/drift.jpg';
+import enduroImg from '@images/compass/enduro.jpg';
+import sportImg from '@images/compass/sport.jpg';
+import svg from '@images/compass/svg.svg';
 
-import autoImg from '../../../public/images/compass/auto.jpg';
-import driftImg from '../../../public/images/compass/drift.jpg';
-import enduroImg from '../../../public/images/compass/enduro.jpg';
-import sportImg from '../../../public/images/compass/sport.jpg';
-import svg from '../../../public/images/compass/svg.svg';
 import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';

@@ -1,18 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-// import Link from 'next/link';
+import { useRef, useState } from 'react';
 import { FaCircle } from 'react-icons/fa';
+import aboutUs from '@images/aboutUs/AboutUs.jpg';
+import { useWindowSize } from 'usehooks-ts';
 
-import aboutUs from '../../../public/images/aboutUs/AboutUs.jpg';
 import Container from '../Container/Container';
-// import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Typography from '../Typography/Typography';
 
 import styles from './AboutUs.module.scss';
-import { useWindowSize } from 'usehooks-ts';
 
 const data = [
   {

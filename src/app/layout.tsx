@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Footer from '@components/components/Footer/Footer';
-import Header from '@components/components/Header/Header';
-import ScrollToUpButton from '@components/components/ScrollToUpButton/ScrollToUpButton';
+import Footer from '@components/Footer/Footer';
+import Header from '@components/Header/Header';
+import ScrollToUpButton from '@components/ScrollToUpButton/ScrollToUpButton';
 
 import { pridi } from './fonts';
 
@@ -20,9 +20,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk" className={pridi.className}>
-      {/* <head>
-        <link rel="icon" href="/public/favicon.ico" sizes="any" />
-      </head> */}
       <body>
         <Header />
         <main className={styles.main}>{children}</main>

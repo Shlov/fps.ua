@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { BiLogoTelegram } from 'react-icons/bi';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
+import logo from '@images/icons/header-logo.svg';
 import { useWindowSize } from 'usehooks-ts';
 
-import logo from '../../../public/images/icons/header-logo.svg';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import Number from '../Number/Number';

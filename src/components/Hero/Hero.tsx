@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
-import { inter } from '@components/app/fonts';
+import heroBg from '@images/hero/hero.jpg';
 
-import heroBg from '../../../public/images/hero/hero.jpg';
+import { inter } from '../../app/fonts';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import Section from '../Section/Section';

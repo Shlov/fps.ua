@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { LiaPhoneSolid } from 'react-icons/lia';
+import logo from '@images/icons/header-logo.svg';
 
-import logo from '../../../public/images/icons/header-logo.svg';
 import Container from '../Container/Container';
 import Number from '../Number/Number';
 import Social from '../Social/Social';

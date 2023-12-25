@@ -6,11 +6,10 @@ import { useRef } from 'react';
 import { MdStarRate } from 'react-icons/md';
 import { PiQuotes } from 'react-icons/pi';
 import Slider, { Settings } from 'react-slick';
+import foto from '@images/reviews/Ellipse.png';
 import { useWindowSize } from 'usehooks-ts';
 
-import foto from '../../../public/images/reviews/Ellipse.png';
 import Container from '../Container/Container';
-// import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import Typography from '../Typography/Typography';

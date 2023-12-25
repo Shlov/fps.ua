@@ -5,8 +5,8 @@ import { useRef } from 'react';
 import { FaCircle } from 'react-icons/fa';
 import Slider from 'react-slick';
 import Arrow from '@images/team/noun-right-928773.svg';
+import team from '@images/team/team.jpg';
 
-import team from '../../../public/images/team/team.jpg';
 import Container from '../Container/Container';
 import Section from '../Section/Section';
 import Title from '../Title/Title';

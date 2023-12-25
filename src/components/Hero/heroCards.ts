@@ -1,4 +1,4 @@
-import heroBg from '../../../public/images/hero/hero.jpg';
+import heroBg from '@images/hero/hero.jpg';
 
 export interface HeroContent {
   id: number;
