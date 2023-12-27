@@ -1,16 +1,6 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
-.list {
-  // display: flex;
-  // gap: 32px;
-}
-
-.title {
-  text-transform: uppercase;
-}
-
 .container {
-
   display: none;
 
   @include breakpoint('tablet-large-and-up') {
@@ -21,14 +11,8 @@
   }
 }
 
-.item {
-
-  // width: 380px;
-}
-
 .image {
   padding: 15px;
-  // margin: 15px;
 }
 
 .btn {
@@ -58,19 +42,12 @@
   left: 50%; 
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 72vw;
-  
-  @include breakpoint('tablet-large-and-up') {
-    
-  }
-  
+
   @include breakpoint('desktop') {
-    
     gap: 1020px;
   }
-  
+
   @include breakpoint('desktop-large') {
     gap: 1220px;
-
   }
 }

@@ -1,17 +1,15 @@
 'use client';
 
-import Slider, { Settings } from 'react-slick';
-import Container from '../Container/Container';
-import Section from '../Section/Section';
-import Title from '../Title/Title';
-import Typography from '../Typography/Typography';
+import Image from 'next/image';
+import { useRef, useState } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import Slider, { Settings } from 'react-slick';
 import img1 from '@images/gallery/image 20.jpg';
 import img2 from '@images/gallery/image 21.jpg';
 
+import Container from '../Container/Container';
+
 import styles from './Gallery.module.scss';
-import { useRef, useState } from 'react';
-import Image from 'next/image';
 
 const galleryData = [
   {
@@ -69,10 +67,6 @@ const sliderSettings: Settings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   appendDots: (dots: React.ReactNode) => <ul>{dots}</ul>,
-  // dotsClass: `${styles.dots} ${dotsStyles}`,
-  // dotsClass: styles.dots,
-  // customPaging: () => <Paging />
-  // customPaging: () => <div className={styles.paging}></div>,
 };
 
 const Gallery = () => {
@@ -91,23 +85,10 @@ const Gallery = () => {
   };
 
   return (
-    // <Section>
-    //   <Title>
-    //     <Typography variant="subheading1" className={styles.title} color="var(--cl-white)">
-    //       Галерея
-    //     </Typography>
-    //   </Title>
-    // </Section>
     <Container className={styles.container}>
       <>
         <ul className={styles.list}>
-          <Slider
-            {...sliderSettings}
-            ref={sliderRef}
-            infinite={true}
-            dots
-            // afterChange={(index: number) => handleSmallImageClick(index)}
-          >
+          <Slider {...sliderSettings} ref={sliderRef} infinite={true} dots>
             {galleryData.map(({ id, image, alt }) => (
               <li key={id} className={styles.item}>
                 <Image src={image} alt={alt} className={styles.image} />
