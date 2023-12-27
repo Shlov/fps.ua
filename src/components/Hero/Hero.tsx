@@ -131,7 +131,7 @@ const Hero = () => {
                   </Typography>
                 </div>
               </div>
-              <Button variant="primary">Записатись на пробне зайняття</Button>
+              <Button variant="primary">Запланувати пробне заняття</Button>
             </div>
         </Container>
           </div>

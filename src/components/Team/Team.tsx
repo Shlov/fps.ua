@@ -13,6 +13,7 @@ import Title from '../Title/Title';
 import Typography from '../Typography/Typography';
 
 import styles from './Team.module.scss';
+import Gallery from '@components/Gallery/Gallery';
 
 const text = [
   {
@@ -126,6 +127,7 @@ const Team = () => {
             </ul>
           </div>
         </Container>
+          <Gallery />
       </Section>
     </div>
   );

@@ -187,12 +187,14 @@
 }
 
 .tag {
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  font-weight: 500;
   line-height: 2.4;
   color: var(--cl-white);
   @include breakpoint('tablet-large-and-up') {
     color: var(--cl-black);
-    line-height: 2.6;
+    font-size: 26px;
+    line-height: 2.2;
   }
 }
 

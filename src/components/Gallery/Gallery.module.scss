@@ -1,10 +1,76 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
 .list {
-  display: flex;
-  gap: 32px;
+  // display: flex;
+  // gap: 32px;
 }
 
 .title {
   text-transform: uppercase;
+}
+
+.container {
+
+  display: none;
+
+  @include breakpoint('tablet-large-and-up') {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin-top: 10px;
+  }
+}
+
+.item {
+
+  // width: 380px;
+}
+
+.image {
+  padding: 15px;
+  // margin: 15px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: inherit;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--cl-black);
+}
+
+.paging {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  color: var(--cl-light-gray);
+  border: 1px var(--cl-light-gray) solid
+}
+
+.wrapperArrows {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 72vw;
+  
+  @include breakpoint('tablet-large-and-up') {
+    
+  }
+  
+  @include breakpoint('desktop') {
+    
+    gap: 1020px;
+  }
+  
+  @include breakpoint('desktop-large') {
+    gap: 1220px;
+
+  }
 }

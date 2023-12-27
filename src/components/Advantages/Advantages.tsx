@@ -40,27 +40,13 @@ const sliderSettings: Settings = {
   autoplaySpeed: 8000,
   arrows: false,
   appendDots: (dots: React.ReactNode) => <ul>{dots}</ul>,
-  // dotsClass: `${styles.dots} ${dotsStyles}`,
   dotsClass: styles.dots,
-  // customPaging: () => <Paging />
   customPaging: () => <div className={styles.paging}></div>,
 };
 
 const Advantages = () => {
-  const totalImages = advantages.length;
 
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const initialPercentage = ((activeImageIndex + 1) / totalImages) * 100;
-
-  const [progressBarHeight, setProgressBarHeight] = useState(initialPercentage);
   const sliderRef = useRef<Slider | null>(null);
-
-  const handleSmallImageClick = (index: number) => {
-    setActiveImageIndex(index);
-    const newPercentage = ((index + 1) / totalImages) * 100;
-    setProgressBarHeight(newPercentage);
-    sliderRef.current?.slickGoTo(index);
-  };
 
   const handlePrevClick = () => {
     if (sliderRef.current) {
@@ -97,7 +83,6 @@ const Advantages = () => {
                 slidesToShow={1}
                 slidesToScroll={1}
                 dots
-                afterChange={(index: number) => handleSmallImageClick(index)}
               >
                 {advantages.map(advantage => (
                   <li key={advantage.number} className={styles.item}>

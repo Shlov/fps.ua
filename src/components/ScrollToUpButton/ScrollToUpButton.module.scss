@@ -27,7 +27,7 @@
   background-color: var(--cl-gray);
   
   &:hover {
-    background-color: var(--cl-orange);
+    background-color: var(--cl-black-085);
   }
   
   @include breakpoint('tablet-large-and-up') {

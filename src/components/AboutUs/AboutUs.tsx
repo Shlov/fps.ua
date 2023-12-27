@@ -73,13 +73,6 @@ const data = [
 ];
 
 const AboutUs = () => {
-  // const [checkboxChecked, setCheckboxChecked] = useState<string | null>(null);
-
-  // const handleChangeCheckbox = (v: string) => {
-
-  //   setCheckboxChecked((prevCheckboxChecked) => (prevCheckboxChecked === v ? null : v));
-
-  // };
 
   const { width } = useWindowSize();
 
