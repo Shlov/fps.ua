@@ -65,6 +65,17 @@
     filter: grayscale(0);
   }
 
+  & .btn {
+    @include breakpoint('tablet-large-and-up') {
+
+      transition: filter 1s ease;
+      filter: grayscale(1);
+    }
+  }
+  &:hover .btn {
+    filter: grayscale(0);
+  }
+
   & .background {
     @include breakpoint('tablet-large-and-up') {
 
@@ -89,25 +100,28 @@
   }
 
   & .text {
-    @include breakpoint('tablet-large-and-up') {
-
-      transition: opacity 1s ease;
-      opacity: 0;
-    }
+    transition: color 1s ease;
   }
   &:hover .text {
-    opacity: 1;
+    color: var(--cl-white);
+  }
+}
+
+.text {
+  color: var(--cl-white);
+  
+  @include breakpoint('tablet-large-and-up') {
+    color: var(--cl-gray);
+    text-align: left;
   }
 }
 
 .card {
   position: relative;
-  // border-radius: 20px;
 }
 
 
 .image {
-  // border-radius: 20px;
   height: 100%;
   width: 100%;
 
@@ -152,11 +166,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  // gap: 20px;
-
+  
   @include breakpoint('tablet-large-and-up') {
     transform: translateY(100%);
     padding: 0;
+    gap: 10px;
   }
 
   @include breakpoint('desktop') {
@@ -171,11 +185,7 @@
 
 }
 
-.text {
-  @include breakpoint('tablet-large-and-up') {
-    text-align: left;
-  }
-}
+
 
 .wrapperDirection {
   position: relative;
@@ -185,7 +195,8 @@
 
   @include breakpoint('tablet-large-and-up') {
     margin-left: 40px;
-  margin-right: auto;
+    margin-right: auto;
+    // margin-bottom: 8px;
   }
 }
 
@@ -239,4 +250,100 @@
   }
 }
 
+.btnContainer {
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+  transition: transform 0.3s ease, 
+  box-shadow 0.3s ease;
+
+  @include breakpoint('tablet-large-and-up') {
+    right: 10px;
+    top: 10px;
+  }
+
+  &:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+}
+
+.btn {
+
+  border: none;
+  background-color: var(--cl-orange);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 2vw;
+  gap: 1vw;
+  
+  @include breakpoint('tablet-large-and-up') {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  @include breakpoint('desktop') {
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+
+  }
+
+  & > img {
+
+    fill: var(--cl-white);
+    width: 6vw;
+    height: 6vw;
+
+    transition: transform 0.1s ease-in-out;
+    animation: spin 1s linear infinite;
+
+    @include breakpoint('desktop') {
+      width: 30px;
+      height: 30px;
+    }
+  
+    @include breakpoint('desktop-large') {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  & > p {
+    color: var(--cl-white);
+    font-size: calc(0.5em + 3.6vw);
+
+    @include breakpoint('tablet-large-and-up') {
+    }
+
+    @include breakpoint('desktop') {
+      font-size: 18px;
+    }
+  
+    @include breakpoint('desktop-large') {
+      font-size: 20px;
+    }
+  }
+}
+
+
+@keyframes spin {
+  0% {
+    transform:  rotateZ(0deg);
+  }
+  33% {
+    transform:  rotateZ(-10deg);
+  }
+  66% {
+    transform:  rotateZ(10deg);
+  }
+  100% {
+    transform:  rotateZ(0deg);
+  }
+}
 

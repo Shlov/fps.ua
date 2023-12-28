@@ -4,6 +4,7 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import autoImg from '@images/compass/auto.jpg';
 import driftImg from '@images/compass/drift.jpg';
 import enduroImg from '@images/compass/enduro.jpg';
+import gift from '@images/compass/noun-gift-card-18060.svg';
 import sportImg from '@images/compass/sport.jpg';
 import svg from '@images/compass/svg.svg';
 
@@ -55,7 +56,7 @@ const data = [
   //   image: driftImg,
   //   href: '',
   // },
-    // {
+  // {
   //   id: 6,
   //   title: 'Турист',
   //   description:
@@ -109,11 +110,17 @@ const Compass = () => {
                       </div>
                       <Typography
                         variant="bodyD"
-                        color="var(--cl-white)"
+                        // color="var(--cl-white)"
                         className={styles.text}
                       >
                         {direction.description}
                       </Typography>
+                    </div>
+                    <div className={styles.btnContainer}>
+                      <button className={styles.btn}>
+                        <Image src={gift} alt="Іконка сертифікату" />
+                        <p>Сертифікат</p>
+                      </button>
                     </div>
                   </div>
                   <div className={styles.button}>

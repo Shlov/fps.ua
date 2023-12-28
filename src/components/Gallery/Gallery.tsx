@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import Slider, { Settings } from 'react-slick';
 import img1 from '@images/gallery/image 20.jpg';
