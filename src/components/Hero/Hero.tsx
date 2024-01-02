@@ -65,21 +65,21 @@ const Hero = () => {
   return (
     <>
       <Section className={styles.sectionWrapper}>
-          <Image
-            src={heroBg}
-            className={styles.image}
-            alt="Background Image"
-            quality={100}
-            priority
-            // fill
-            sizes="(min-width: 1230) 1200px,
+        <Image
+          src={heroBg}
+          className={styles.image}
+          alt="Background Image"
+          quality={100}
+          priority
+          // fill
+          sizes="(min-width: 1230) 1200px,
             (min-width: 1024) 976px,
             (min-width: 768px) 720px,
             (min-width: 667px) 619px,
             327px"
-          />
-          <div className={styles.gradient}>
-            <Container className={styles.container}>
+        />
+        <div className={styles.gradient}>
+          <Container className={styles.container}>
             <div className={styles.wrapper}>
               <div className={styles.heading}>
                 <div className={styles.wrapperHeading}>
@@ -133,8 +133,8 @@ const Hero = () => {
               </div>
               <Button variant="primary">Запланувати пробне заняття</Button>
             </div>
-        </Container>
-          </div>
+          </Container>
+        </div>
       </Section>
     </>
   );

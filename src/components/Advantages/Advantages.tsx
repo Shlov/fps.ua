@@ -45,7 +45,6 @@ const sliderSettings: Settings = {
 };
 
 const Advantages = () => {
-
   const sliderRef = useRef<Slider | null>(null);
 
   const handlePrevClick = () => {
@@ -116,7 +115,11 @@ const Advantages = () => {
               </button>
             </div>
           </div>
-          <Image src={advantagesImg} alt='Відео наших занять'  className={styles.gif}/>
+          <Image
+            src={advantagesImg}
+            alt="Відео наших занять"
+            className={styles.gif}
+          />
         </div>
       </Container>
     </Section>
