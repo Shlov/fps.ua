@@ -3,6 +3,8 @@ import Footer from '@components/Footer/Footer';
 import Header from '@components/Header/Header';
 import ScrollToUpButton from '@components/ScrollToUpButton/ScrollToUpButton';
 
+import { ModalProvider } from '../../context/ModalContext';
+
 import { pridi } from './fonts';
 
 import './globals.css';
@@ -21,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="uk" className={pridi.className}>
       <body>
-        <Header />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+        <ModalProvider>
+          <Header />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </ModalProvider>
         <ScrollToUpButton />
       </body>
     </html>

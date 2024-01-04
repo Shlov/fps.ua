@@ -2,8 +2,11 @@
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
+import CallbackForm from '@components/CallbackForm/CallbackForm';
+import Modal from '@components/Modal/Modal';
 import heroBg from '@images/hero/hero.jpg';
 
+import { useModalContext } from '../../../context/ModalContext';
 import { inter } from '../../app/fonts';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
@@ -36,6 +39,7 @@ const Hero = () => {
 
   const disablePrevButton = currentSlide === 0;
   const disableNextButton = currentSlide === heroCards.length - 1;
+  const { isModal, toggleModal } = useModalContext();
 
   const handlePrevClick = () => {
     if (!disablePrevButton && sliderRef.current) {
@@ -131,8 +135,11 @@ const Hero = () => {
                   </Typography>
                 </div>
               </div>
-              <Button variant="primary">Запланувати пробне заняття</Button>
+              <Button variant="primary" onClick={toggleModal}>Запланувати пробне заняття</Button>
             </div>
+            <Modal active={isModal} setActive={toggleModal}>
+              <CallbackForm title='Заплануй заняття'/>
+            </Modal>
           </Container>
         </div>
       </Section>
