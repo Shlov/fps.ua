@@ -2,10 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { MdStarRate } from 'react-icons/md';
 import { PiQuotes } from 'react-icons/pi';
 import Slider, { Settings } from 'react-slick';
+import Button from '@components/Button/Button';
+import CallbackForm from '@components/CallbackForm/CallbackForm';
+import Modal from '@components/Modal/Modal';
 import foto from '@images/reviews/Ellipse.png';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -15,9 +18,6 @@ import Title from '../Title/Title';
 import Typography from '../Typography/Typography';
 
 import styles from './Reviews.module.scss';
-// import Paging from '../Paging/Paging';
-
-// type dataI = Record<string, string>[];
 
 type dataI = {
   name: string;
@@ -127,6 +127,12 @@ const Reviews = () => {
   const { width } = useWindowSize();
   const isDesktopScreen = width < 1024;
 
+  const [isModal, setIsModal] = useState(false);
+
+  const toggleModal = () => {
+    setIsModal(prevIsModal => !prevIsModal);
+  };
+
   return (
     <Section>
       <Container>
@@ -189,6 +195,12 @@ const Reviews = () => {
             ))}
           </Slider>
         </div>
+        <Button variant="primary" onClick={toggleModal}>
+          Запланувати пробне заняття
+        </Button>
+        <Modal active={isModal} setActive={toggleModal}>
+          <CallbackForm title="Записатись на навчання" onCloseModal={toggleModal}/>
+        </Modal>
       </Container>
     </Section>
   );

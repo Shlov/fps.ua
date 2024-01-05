@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction, useEffect, useState } from 'react';
+import React, { FC, SetStateAction, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './Modal.module.scss';
@@ -13,7 +13,7 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [originalOverflow, setOriginalOverflow] = useState<string>('');
+  const originalOverflow = useRef<string>('');
 
   const closeModal = () => {
     setIsVisible(false);
@@ -38,11 +38,11 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
 
   const handleBodyScroll = (): void => {
     if (active) {
-      setOriginalOverflow(document.body.style.overflow);
+      originalOverflow.current = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', onEscKeydown);
     } else {
-      document.body.style.overflow = originalOverflow;
+      document.body.style.overflow = originalOverflow.current;
       window.removeEventListener('keydown', onEscKeydown);
     }
   };
@@ -59,7 +59,7 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     return () => {
       window.removeEventListener('keydown', onEscKeydown);
     };
-  }, [active, originalOverflow]);
+  }, [active]);
 
   if (!active) return null;
 

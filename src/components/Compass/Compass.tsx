@@ -1,6 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import Button from '@components/Button/Button';
+import CallbackForm from '@components/CallbackForm/CallbackForm';
+import Modal from '@components/Modal/Modal';
 import autoImg from '@images/compass/auto.jpg';
 import driftImg from '@images/compass/drift.jpg';
 import enduroImg from '@images/compass/enduro.jpg';
@@ -67,6 +73,12 @@ const data = [
 ];
 
 const Compass = () => {
+  const [isModal, setIsModal] = useState(false);
+
+  const toggleModal = () => {
+    setIsModal(prevIsModal => !prevIsModal);
+  };
+
   return (
     <div id="Compass">
       <Section className={styles.section}>
@@ -83,7 +95,7 @@ const Compass = () => {
           {/* <h2>Navigation section</h2> */}
           <div className={styles.wrapper}>
             {data.map((direction: any) => (
-              <>
+              <div className={styles.wrapperLink} key={direction.id}>
                 <Link href={direction.href} className={styles.link}>
                   <div className={styles.card}>
                     <Image
@@ -116,12 +128,6 @@ const Compass = () => {
                         {direction.description}
                       </Typography>
                     </div>
-                    <div className={styles.btnContainer}>
-                      <button className={styles.btn}>
-                        <Image src={gift} alt="Іконка сертифікату" />
-                        <p>Сертифікат</p>
-                      </button>
-                    </div>
                   </div>
                   <div className={styles.button}>
                     <SlArrowRight className={styles.icon} />
@@ -135,9 +141,18 @@ const Compass = () => {
                     <SlArrowLeft className={styles.icon} />
                   </div>
                 </Link>
-              </>
+                <div className={styles.btnContainer}>
+                  <button className={styles.btn} onClick={toggleModal}>
+                    <Image src={gift} alt="Іконка сертифікату" />
+                    <p>Сертифікат</p>
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
+          <Modal active={isModal} setActive={toggleModal}>
+            <CallbackForm title="Замовити сертифікат" onCloseModal={toggleModal}/>
+          </Modal>
         </Container>
       </Section>
     </div>

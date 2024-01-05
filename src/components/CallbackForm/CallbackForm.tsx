@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import Button from '@components/Button/Button';
+import { HiOutlineX } from 'react-icons/hi';
 import Typography from '@components/Typography/Typography';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
@@ -8,16 +8,20 @@ import styles from './CallbackForm.module.scss';
 
 interface CallbackFormProps {
   title: string;
+  onCloseModal: () => void;
 }
 
-const CallbackForm: React.FC<CallbackFormProps> = ({ title }) => {
-  const phoneRegex = /^(\d{3}[-\s]?)(\d{3}[-\s]?)(\d{2}[-\s]?){2}$/;
-
+const CallbackForm: React.FC<CallbackFormProps> = ({ title, onCloseModal }) => {
+  const phoneRegex = /^(\d[-\s]{0,3}){9}\d$/;
+  const lettersRegex = /^(?=.{2,16}$)[a-zA-Zа-яА-ЯіїІЇ]+(?:[-\s][a-zA-Zа-яА-ЯіїІЇ]+)*$/;
   const schema = object({
-    name: string(),
+    name: string()
+      .trim()
+      .required("Вкажіть ім'я")
+      .matches(lettersRegex, 'Не валідне значення імені'),
     number: string()
       .trim()
-      .required('Номер телефону обовязковий до заповнення')
+      .required('Номер телефону обовязковий')
       .matches(phoneRegex, 'Не валідне значення номеру'),
   });
 
@@ -33,16 +37,16 @@ const CallbackForm: React.FC<CallbackFormProps> = ({ title }) => {
 
   return (
     <div className={styles.wrapper}>
-      <Typography variant="subheadingN">{title}</Typography>
+      <h3 className={styles.heading}>{title}</h3>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.label}>
-          <p className={styles.title}>Ім'я</p>
+          <p className={styles.title}>Ім&apos;я</p>
           <input
             className={styles.input}
             {...register('name')}
             placeholder="Олег"
           />
-          {/* <p className={styles.error}>{errors.name?.message}</p> */}
+          <p className={styles.error}>{errors.name?.message}</p>
         </label>
         <label className={styles.label}>
           <p className={styles.title}>Номер телефону</p>
@@ -59,6 +63,9 @@ const CallbackForm: React.FC<CallbackFormProps> = ({ title }) => {
         </button>
         {/* <Button variant="primary" className={styles.btn} type='submit'>Надіслати</Button> */}
       </form>
+      <button className={styles.close} aria-label='Зкарити форму' onClick={onCloseModal}>
+        <HiOutlineX />
+      </button>
     </div>
   );
 };

@@ -39,7 +39,12 @@ const Hero = () => {
 
   const disablePrevButton = currentSlide === 0;
   const disableNextButton = currentSlide === heroCards.length - 1;
-  const { isModal, toggleModal } = useModalContext();
+  // const { isModal, toggleModal } = useModalContext();
+  const [isModal, setIsModal] = useState(false);
+
+  const toggleModal = () => {
+    setIsModal(prevIsModal => !prevIsModal);
+  };
 
   const handlePrevClick = () => {
     if (!disablePrevButton && sliderRef.current) {
@@ -138,7 +143,7 @@ const Hero = () => {
               <Button variant="primary" onClick={toggleModal}>Запланувати пробне заняття</Button>
             </div>
             <Modal active={isModal} setActive={toggleModal}>
-              <CallbackForm title='Заплануй заняття'/>
+              <CallbackForm title='Заплануй заняття' onCloseModal={toggleModal}/>
             </Modal>
           </Container>
         </div>

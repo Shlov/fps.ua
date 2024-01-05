@@ -41,8 +41,9 @@
   }
 }
 
+.wrapperLink {
+  position: relative;
 
-.link {
   @include breakpoint('desktop') {
     width: 460px;
     height: 420px;
@@ -104,6 +105,19 @@
   }
   &:hover .text {
     color: var(--cl-white);
+  }
+}
+
+.link {
+  @include breakpoint('desktop') {
+    width: 460px;
+    height: 420px;
+    
+  }
+  
+  @include breakpoint('desktop-large') {
+    width: 580px;
+    height: 475px;
   }
 }
 
@@ -196,7 +210,6 @@
   @include breakpoint('tablet-large-and-up') {
     margin-left: 40px;
     margin-right: auto;
-    // margin-bottom: 8px;
   }
 }
 
