@@ -1,10 +1,20 @@
 @import '../../scss/utilities/breakpoint-mixin.scss';
 
 .container {
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint('tablet-large-and-up') {
+
+  }
+}
+
+.wrapperSlider {
   margin: 10vw 6vw 14vw 6vw;
 
   @include breakpoint('tablet-large-and-up') {
-    margin: 50px 0 0 0;
+    margin: 50px 0 50px 0;
   }
 }
 
@@ -13,7 +23,6 @@
     // width: 340px;
     // padding: 0 20px;
     // margin: 0 12px;
-
   }
 }
 
@@ -168,5 +177,10 @@
   color: var(--cl-light-gray);
   border: 1px var(--cl-light-gray) solid
   
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
 }
 

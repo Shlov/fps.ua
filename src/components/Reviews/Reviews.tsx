@@ -135,7 +135,7 @@ const Reviews = () => {
 
   return (
     <Section>
-      <Container>
+      <Container className={styles.container}>
         <Title>
           <Typography
             variant="subheading1"
@@ -145,7 +145,7 @@ const Reviews = () => {
             Відгуки
           </Typography>
         </Title>
-        <div className={styles.container}>
+        <div className={styles.wrapperSlider}>
           <Slider
             {...sliderSettings}
             ref={sliderRef}
@@ -195,7 +195,7 @@ const Reviews = () => {
             ))}
           </Slider>
         </div>
-        <Button variant="primary" onClick={toggleModal}>
+        <Button variant="primary" onClick={toggleModal} className={styles.btn}>
           Запланувати пробне заняття
         </Button>
         <Modal active={isModal} setActive={toggleModal}>
